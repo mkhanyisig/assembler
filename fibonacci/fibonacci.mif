@@ -1,0 +1,30 @@
+-- Mkhanyisi Gamedze 
+-- CS232 programROM MIF
+-- Fibonacci sequence
+
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+
+BEGIN
+-- steup initial register values
+00 : 1111100000000000; -- move/load 0 to RA
+01 : 1111100000001001; -- move/load 1 to RB
+02 : 0110010000000000; -- store to output at RC (store to output)
+03 : 1111100001010011; -- move/load 10 to RD (countdown value for forloop)
+04 : 1111100000001100; -- move/load 1 to RE
+05 : 0011010000000111; -- Call/Jump to address 7 (call immediate address, begin fibonnacci processing)
+06 : 0011110000000000; -- Exit program (done)
+07 : 1000000001000010; -- ADD RA to RB, then place result in RC 
+08 : 0110010000000000; -- output the result of ADD to RC 
+-- prepare fo next step of iteration
+09 : 1111000100000000; -- Move/Copy RB to RA
+0A : 1111001000000001; -- Move/Copy RC to RB
+0B : 1001011100000011; -- Subtract 1(RE) from RD store result in RD 
+0C : 0011000000001101; -- Conditional Branch to Return (zero branch condition for RD, execution returns)
+0D : 0011010000000110; -- Call/Jump to 6 (exit)  -- when it reaches here, program done, PC reaches this address
+0E : 0011100000000000; -- Return to address 6 which was called earlier
+[0F..FF] : 1111111111111111;
+END
