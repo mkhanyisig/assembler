@@ -1,0 +1,19 @@
+start:
+movei 0 ra
+movei 1 rb
+oport rb
+movei 1 rd
+movei 1 re
+call execute
+exit:
+halt
+execute:
+add ra rb rc
+oport rc
+move rb ra
+move rc rb
+sub rd re rd
+braz return
+call exit
+return:
+return

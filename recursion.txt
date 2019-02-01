@@ -1,0 +1,13 @@
+# recursive addition from 0 to N
+start:
+movei 0 RA
+movei 1 RB
+movei 1 RC
+recursion:
+add ra rb ra
+brao terminate
+oport ra
+add rb rc rb
+terminate:
+return
+exit
