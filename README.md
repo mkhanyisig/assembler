@@ -1,3 +1,4 @@
+Colby College CS232 project
 # assembler
 Computer Organization Project | A 2-pass assembler for a RISC CPU architecture, which translates human assembly text instructions to machine code
 
