@@ -1,5 +1,4 @@
 # Template by Bruce A. Maxwell, 2015
-#
 # implements a simple assembler for the following assembly language
 # 
 # - One instruction or label per line.
